@@ -1,0 +1,9 @@
+<a href="{% url "lists:home" %}">Home</a>
+<ul>
+    {% if user.is_authenticated %}
+    <li class="nav_link"><a href="{% url "users:logout" %}">Log out</a></li>
+    {% else %}
+    <li class="nav_link"><a href="{% url "users:login" %}">Login</a></li>
+    <li class="nav_link"><a href="{% url "users:signup" %}">Sign up</a></li>
+    {% endif %}
+</ul>

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block page_name %}List{% endblock page_name %}
+
+{% block content %}
+<div>Title :{{list.title}}</div>
+<div>Description :{{list.description}}</div>
+<div>Host :{{list.host}}</div>
+<a href="{% url "lists:edit" list.pk %}">Edit list</a>
+<a href="{% url 'lists:delete' list.pk %}"><button type="button">삭제하기</button></a>
+{% comment %} <a href="{% url "lists:delete" list.pk %}">Delete list</a> {% endcomment %}
+{% endblock content %}

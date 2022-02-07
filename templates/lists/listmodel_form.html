@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block page_name %}Create{% endblock page_name %}
+
+{% block content %}
+<form method="POST" action="{% url "lists:create" %}">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button>Create!!</button>
+</form>
+
+{% endblock content %}
